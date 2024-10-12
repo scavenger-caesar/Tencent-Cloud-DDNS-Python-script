@@ -1,0 +1,30 @@
+[api]
+# 密钥可前往官网控制台 https://console.cloud.tencent.com/cam/capi 进行获取
+SecretId = ""
+SecretKey = ""
+
+[dns]
+# 一级域名
+domain = ""
+# 二级域名, 如不用二级域名则留空
+sub_domain = ""
+# 记录类型, 可选值: IPV6 | IPV4
+record_type = "IPV6"
+# 记录线路, 可选值: 参考官网DNS解析线路类型
+record_line = "默认"
+
+[log]
+# log显示等级, 可选值: DEBUG | INFO | WARNING | ERROR | CRITICAL
+level = "INFO"
+# log打印样式, 样式意义参考python logging库文档
+format = "[%(asctime)s] - %(levelname)s - %(funcName)s(): %(message)s - line: %(lineno)d"
+
+[[log.handlers]]
+# log输出, 可选值: CONSOLE | FILE | TimeROTA
+# CONSOLE输出至命令行; FILE输出到一个文件; TimeROTA根据时间轮换(当前默认每天午夜轮换，旧日志保存2天)
+handler = "TimeROTA"
+
+[[log.handlers]]
+# log输出, 可选值: CONSOLE | FILE | TimeROTA
+# CONSOLE输出至命令行; FILE输出到一个文件; TimeROTA根据时间轮换(当前默认每天午夜轮换，旧日志保存2天)
+handler = "CONSOLE"
